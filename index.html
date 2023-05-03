@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <meta name="description" content="A weather application that retrieves and displays weather information based on user input or location.">
+    <!-- Add any other meta tags relevant for SEO -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <h1>Weather App</h1>
+    <!-- Add any navigation elements or logo if needed -->
+</header>
+
+<main>
+    <section id="location-input">
+        <form>
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" placeholder="City, Country" required>
+            <button type="submit">Get Weather</button>
+        </form>
+    </section>
+
+    <section id="weather-display">
+        <div id="current-weather">
+            <!-- Display current weather information here -->
+        </div>
+
+        <div id="historical-weather">
+            <!-- Display historical weather information here -->
+        </div>
+    </section>
+
+    <section id="location-management">
+        <h2>Manage Locations</h2>
+        <ul id="location-list">
+            <!-- Display the list of added locations here -->
+        </ul>
+        <!-- Add buttons or forms to add and remove locations -->
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2023 Weather App. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>
