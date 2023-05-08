@@ -1,56 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
-    <meta name="description" content="A weather application that retrieves and displays weather information based on user input or location.">
-    <!-- Add any other meta tags relevant for SEO -->
-
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-<header>
-    <h1>Weather App</h1>
-    <!-- Add any navigation elements or logo if needed -->
-</header>
 
-<main>
-    <section id="location-input">
-        <form>
-            <label for="location">Enter Location:</label>
-            <input type="text" id="location" placeholder="City, Country" required>
-            <button type="submit">Get Weather</button>
-        </form>
-    </section>
-
-    <section id="weather-display">
-        <div id="current-weather">
-            <!-- Display current weather information here -->
+<div class="root-content-container">
+    <div class="root-content">
+    <div class="navbar-container">
+        <div class="navbar-content">
+            <img class="navbar-img " alt="logo" src="./resources/images/umbrella.png"/>
+            <nav class="navbar">
+                <a href="#" class="nav-link">Weather</a>
+                <a href="#" class="nav-link">Cities</a>
+                <a href="#" class="nav-link">Map</a>
+            </nav>
         </div>
-
-        <div id="historical-weather">
-            <!-- Display historical weather information here -->
+    </div>
+    <div class="main-content-container">
+        <div class="search-bar-container">
+                <form class="search-form" id="search-form" method="get">
+                    <label for="searchbar"></label>
+                    <input id="searchbar" class="search-input" name="city" type="text" placeholder="Search for cities"/>
+                </form>
         </div>
-    </section>
-
-    <section id="location-management">
-        <h2>Manage Locations</h2>
-        <ul id="location-list">
-            <!-- Display the list of added locations here -->
-        </ul>
-        <!-- Add buttons or forms to add and remove locations -->
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2023 Weather App. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+        <div class="city-info-container">
+            <div class="city-info-content">
+                <div class="city-info">
+                    <div class="city-info-top">
+                      <h1 id="city-name">City</h1>
+                      <h6 id="chance-of-rain">Chance of rain: </h6>
+                    </div>
+                    <div class="city-info-bottom">
+                      <h1 id="city-temp">Temp</h1>
+                    </div>
+                </div>
+                <div class="city-img-container">
+                    <img id="cityImage" class="city-img" src="" alt="logo">
+                </div>
+            </div>
+        </div>
+        <div class="city-forecast-container">
+            <h5>TODAYS FORECAST</h5>
+            <div class="city-forecast-columns">
+                <div class="city-forecast-item">
+                    <h5>6:00 AM</h5>
+                    <img class="city-img" id="city-img-six" src="" alt="logo">
+                    <h4 class="city-temp" id="city-temp-six">TEMP</h4>
+                </div>
+                <div class="city-forecast-item">
+                    <h5>9:00 AM</h5>
+                    <img class="city-img" id="city-img-nine" src="" alt="logo">
+                    <h4 class="city-temp" id="city-temp-nine">TEMP</h4>
+                </div>
+                <div class="city-forecast-item">
+                    <h5>12:00 PM</h5>
+                    <img class="city-img" id="city-img-twelve" src="" alt="logo">
+                    <h4 class="city-temp" id="city-temp-twelve">TEMP</h4>
+                </div>
+                <div class="city-forecast-item">
+                    <h5>3:00 PM</h5>
+                    <img class="city-img" id="city-img-three" src="" alt="logo">
+                    <h4 class="city-temp" id="city-temp-three">TEMP</h4>
+                </div>
+                <div class="city-forecast-item">
+                    <h5>6:00 PM</h5>
+                    <img class="city-img" id="city-img-sixpm" src="" alt="logo">
+                    <h4 class="city-temp" id="city-temp-sixpm">TEMP</h4>
+                </div>
+                <div class="city-forecast-item">
+                    <h5>9:00 PM</h5>
+                    <img class="city-img" id="city-img-ninepm" src="" alt="logo">
+                    <h4 class="city-temp" id="city-temp-ninepm">TEMP</h4>
+                </div>
+            </div>
+        </div>
+        <div class="data-section-container">
+            <h4>Air conditions</h4>
+            <div class="data-section-content">
+                <div class="r-grid">
+                    <div class="logo-label">
+                    <img src="/resources/images/real-feel.png" alt="logo" id="real-feel-img">
+                    <h5>Real Feel</h5>
+                    </div>
+                    <h3 id="real-feel-val">Data</h3>
+                </div>
+                <div class="r-grid">
+                    <div class="logo-label">
+                    <img src="resources/images/wind.png" alt="logo">
+                        <h5>Wind</h5>
+                    </div>
+                    <h3 id="wind-val">Data</h3>
+                </div>
+                <div class="r-grid">
+                    <div class="logo-label">
+                    <img src="/resources/images/chanceofrain.png" alt="logo">
+                    <h5>Chance of rain</h5>
+                    </div>
+                    <h3 id="rain-chance-val">Data</h3>
+                </div>
+                <div class="r-grid">
+                    <div class="logo-label">
+                    <img src="/resources/images/uv.png" alt="logo">
+                    <h5>UV Index</h5>
+                    </div>
+                    <h3 id="uv-val">Data</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="forecast-container">
+        <h5>7 Day Forecast</h5>
+        <div class="forecast-content">
+            <div class="f-grid n0-row">
+                <h6 id="n0">Today</h6>
+                <div class="forecast-image">
+                    <img id="n0-img" src="" alt="logo">
+                    <h5 id="n0-code">Data</h5>
+                </div>
+               <h6 id="n0-temp">Data/Data</h6>
+            </div>
+            <div class="f-grid n1-row">
+                <h6 id="n1">Value</h6>
+                <div class="forecast-image">
+                    <img id="n1-img" src="" alt="logo">
+                    <h5  id="n1-code">Data</h5>
+                </div>
+                <h6 id="n1-temp">Data/Data</h6>
+            </div>
+            <div class="f-grid n2-row">
+                <h6 id="n2">Value</h6>
+                <div class="forecast-image">
+                    <img id="n2-img" src="" alt="logo">
+                    <h5 id="n2-code">Data</h5>
+                </div>
+                <h6 id="n2-temp">Data/Data</h6>
+            </div>
+            <div class="f-grid n3-row">
+                <h6 id="n3">Value</h6>
+                <div class="forecast-image">
+                    <img id="n3-img" src="" alt="logo">
+                    <h5 id="n3-code">Data</h5>
+                </div>
+                <h6 id="n3-temp">Data/Data</h6>
+            </div>
+            <div class="f-grid n4-row">
+                <h6 id="n4">Value</h6>
+                <div class="forecast-image">
+                    <img id="n4-img" src="" alt="logo">
+                    <h5 id="n4-code" class="image-result">Data</h5>
+                </div>
+                <h6 id="n4-temp">Data/Data</h6>
+            </div>
+            <div class="f-grid n5-row">
+                <h6 id="n5">Value</h6>
+                <div class="forecast-image">
+                    <img id="n5-img" src="" alt="logo">
+                    <h5 id="n5-code" class="image-result">Data</h5>
+                </div>
+                <h6 id="n5-temp">Data/Data</h6>
+            </div>
+            <div class="f-grid n6-row">
+                <h6 id="n6">Value</h6>
+                <div class="forecast-image">
+                    <img id="n6-img" src="" alt="logo">
+                    <h5 id="n6-code" class="image-result">Data</h5>
+                </div>
+                <h6 id="n6-temp">Data/Data</h6>
+            </div>
+    </div>
+    </div>
+    </div>
+</div>
+<script type="module" src="api-script.js"></script>
 </body>
-
 </html>
